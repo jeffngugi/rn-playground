@@ -1,6 +1,6 @@
 import React, {useEffect,useRef, useState} from 'react'
 import {View, Text, Dimensions, Image, StyleSheet, SafeAreaView, SafeAreaViewBase, FlatList, Touchable, TouchableOpacity} from 'react-native'
-import {PEXEL_KEY} from '../config'
+import {PEXEL_KEY} from './config'
 const {width, height} = Dimensions.get('screen')
 
 
