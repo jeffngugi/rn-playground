@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-
+apply plugin: 'com.google.gms.google-services'
 import com.android.build.OutputFile
 
 /**
@@ -181,6 +181,7 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -199,6 +200,12 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
+
+    implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Add this line
+    implementation "androidx.browser:browser:1.2.0
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";

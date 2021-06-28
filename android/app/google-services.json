@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "320695990695",
+    "project_id": "kejalist",
+    "storage_bucket": "kejalist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320695990695:android:353fe21de4734a3fb81e82",
+        "android_client_info": {
+          "package_name": "com.playground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320695990695-o9072qqn0ilccb49gtmjlga2m0f9178j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKp1L_SBwES1ks6i_oSjc-XH94LOqUlQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320695990695-o9072qqn0ilccb49gtmjlga2m0f9178j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320695990695:android:8a966115e3729984b81e82",
+        "android_client_info": {
+          "package_name": "com.repay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320695990695-v0f8jlf9v1gc2i55226vdniuea20p2ri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.repay",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "320695990695-o9072qqn0ilccb49gtmjlga2m0f9178j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKp1L_SBwES1ks6i_oSjc-XH94LOqUlQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320695990695-o9072qqn0ilccb49gtmjlga2m0f9178j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
