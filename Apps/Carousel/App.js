@@ -27,7 +27,21 @@ const App = () => {
     const [indexSelected, setIndexSelected] = useState(0);
   const onSelect = indexSelected => {
     setIndexSelected(indexSelected);
+
+    flatListRef?.current?.scrollToOffset({
+        offset: indexSelected * THUMB_SIZE,
+        animated: true
+      });
   };
+
+  const carouselRef = useRef();
+  const flatListRef = useRef();
+
+  const onTouchThumbnail = touched => {
+    if (touched === indexSelected) return;
+    carouselRef?.current?.snapToItem(touched);
+  };
+
   const [images, setImages] = useState([
     { id: '1', image: IMAGES.image1 },
     { id: '2', image: IMAGES.image2 },
@@ -53,6 +67,7 @@ const App = () => {
       {/* Carousel View */}
       <View style={{ flex: 1 / 2, marginTop: 20, }}>
       <Carousel
+        ref={carouselRef}
         onSnapToItem={index => onSelect(index)}
         layout='default'
         data={images}
@@ -96,30 +111,31 @@ const App = () => {
     </View>
       {/* Thumbnail component using FlatList */}
       <FlatList
-  horizontal={true}
-  data={images}
-  style={{ position: 'absolute', bottom: 80 }}
-  showsHorizontalScrollIndicator={false}
-  contentContainerStyle={{
-    paddingHorizontal: SPACING
-  }}
-  keyExtractor={item => item.id}
-  renderItem={({ item, index }) => (
-    <TouchableOpacity activeOpacity={0.9}>
-      <Image
-        style={{
-          width: THUMB_SIZE,
-          height: THUMB_SIZE,
-          marginRight: SPACING,
-          borderRadius: 16,
-          borderWidth: index === indexSelected ? 4 : 0.75,
-          borderColor: index === indexSelected ? 'orange' : 'white'
+        ref={flatListRef}
+        horizontal={true}
+        data={images}
+        style={{ position: 'absolute', bottom: 80 }}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{
+            paddingHorizontal: SPACING
         }}
-        source={item.image}
-      />
-    </TouchableOpacity>
-  )}
-/>
+        keyExtractor={item => item.id}
+        renderItem={({ item, index }) => (
+            <TouchableOpacity activeOpacity={0.9} onPress={() => onTouchThumbnail(index)}>
+            <Image
+                style={{
+                width: THUMB_SIZE,
+                height: THUMB_SIZE,
+                marginRight: SPACING,
+                borderRadius: 16,
+                borderWidth: index === indexSelected ? 4 : 0.75,
+                borderColor: index === indexSelected ? 'orange' : 'white'
+                }}
+                source={item.image}
+            />
+            </TouchableOpacity>
+        )}
+        />
 
     </View>
   );
